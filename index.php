@@ -5,7 +5,7 @@ session_start();
 
 // Verifica se o usuário está logado
 if (!isset($_SESSION['idUsuario'])) {
-    header("location: http://localhost/ProjetoAdegaIrmandade/home.php");
+    header("location: http://localhost/AdegaIrmandadeLocal/home.php");
     exit;
 } else {
 
@@ -23,7 +23,7 @@ if (!isset($_SESSION['idUsuario'])) {
     $_SESSION['fotoUsuario'] = $usuario->getFoto();
 
 
-    header("location: http://localhost/ProjetoAdegaIrmandade/home.php");
+    header("location: http://localhost/AdegaIrmandadeLocal/home.php");
 
 
 }

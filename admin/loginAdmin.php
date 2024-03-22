@@ -90,7 +90,7 @@
       var login = document.querySelector('.estruturaLogin'); // Seleciona a estrutura pelo elemento de classe para o fechamento
       login.style.display = 'none';
 
-      window.location.href = 'http://localhost/ProjetoAdegaIrmandade/';
+      window.location.href = 'http://localhost/AdegaIrmandadeLocal/';
     }
 
     function carregarLogin() {
@@ -113,7 +113,7 @@
               $('#msgLogin').html('<div class="msgSuccess">' + data.message + '</div>');
 
               var idUsuario = data.idUsuario; //Banco de dados do Funcionario
-              window.location.href = 'http://localhost/ProjetoAdegaIrmandade/admin/index.php?p=dashboard';
+              window.location.href = 'http://localhost/AdegaIrmandadeLocal/admin/index.php?p=dashboard';
 
             } else {
 

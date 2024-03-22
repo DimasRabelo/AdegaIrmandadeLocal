@@ -9,6 +9,6 @@ session_unset();
 // Destruir a Sessão:
 session_destroy();
 
-header("location:http://localhost/ProjetoAdegaIrmandade/");
+header("location:http://localhost/AdegaIrmandadeLocal/");
 
 exit;

@@ -85,7 +85,7 @@
       var login = document.querySelector('.estruturaLogin'); // Seleciona a estrutura pelo elemento de classe para o fechamento
       login.style.display = 'none';
 
-      window.location.href = 'http://localhost/ProjetoAdegaIrmandade/';
+      window.location.href = 'http://localhost/AdegaIrmandadeLocal/';
     }
 
     function carregarLogin() {
@@ -114,7 +114,7 @@
               sessionStorage.setItem('nomeUsuario', nomeUsuario);
               sessionStorage.setItem('fotoUsuario', fotoUsuario);
 
-              window.location.href = 'http://localhost/ProjetoAdegaIrmandade/';
+              window.location.href = 'http://localhost/AdegaIrmandadeLocal/';
             } else {
               $('#msgLogin').html('<div class="msgSuccess">' + data.message + '</div>');
             }
