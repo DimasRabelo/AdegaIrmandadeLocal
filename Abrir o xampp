@@ -1,0 +1,23 @@
+
+
+
+
+
+
+Entrar no Xampp
+cd /opt/lampp
+
+sudo ./manager-linux-x64.run
+
+Permissões de Pasta
+
+cd /opt/lampp
+ls
+sudo chmod 777 htdocs
+
+Quando o Apache da erro ao Startar
+é só para o Apache nativo
+depois ir no xampp e startar
+
+sudo systemctl stop apache2
+
