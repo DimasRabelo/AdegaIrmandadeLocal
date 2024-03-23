@@ -90,6 +90,7 @@ header {
   flex-direction: column;
   background: #525252;
   text-align: center;
+ 
 }
 
 .brejas {
@@ -121,6 +122,7 @@ header {
       max-width: 500px;
       max-height: 700px;
       object-fit: cover;
+     
   }
 
   .bannerTabacaria{
