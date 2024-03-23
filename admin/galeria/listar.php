@@ -11,12 +11,8 @@ $listaDesativados = $galeria->listarDesativados();
         justify-content: center;
     }
        
-    .iconeCrud{
-        padding: 100px;
-    }
-    .iconeCrud img{
-        margin-right: -114px 
-    }
+    
+    
     .GaleriaFoto{
         width: 100%;
     }
@@ -63,6 +59,7 @@ $listaDesativados = $galeria->listarDesativados();
                         <td class="iconeCrud"> <a href="index.php?p=galeria&g=ativar&id=<?php echo $linha['idGaleria']; ?>" onclick="return confirmarAtivacao()">
                                 <img src="./img/aceitar.png" alt="Ativar">
                             </a>
+                            <span style="margin-right: 70px;"></span>
                             <a href="index.php?p=galeria&g=desativar&id=<?php echo $linha['idGaleria'] ?>" onclick="return confirmarDesativacao()">
                                 <img src="./img/lixeira-de-reciclagem.png" alt="Desativar">
                             </a>
