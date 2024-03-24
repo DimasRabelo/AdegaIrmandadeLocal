@@ -58,8 +58,8 @@ if (isset($_POST['statusVenda'])) {
 
 
     <div>
-        <label for="valorTotalVenda"> Valor Total</label>
-        <input type="text" name="valorTotalVenda" id="valorTotalVenda" placeholder="digite o valor" value="R$ <?php echo $venda->valorTotalVenda; ?>">
+        <label for="valorTotalVenda"> Valor Total R$:</label>
+        <input type="text" name="valorTotalVenda" id="valorTotalVenda" placeholder="digite o valor" value="<?php echo $venda->valorTotalVenda; ?>">
     </div>
 
     <div>
@@ -74,12 +74,12 @@ if (isset($_POST['statusVenda'])) {
             $funcionarioClass = new FuncionarioClass();
 
             // Obtém os funcionários ativos usando o método listarAtivos()
-            $funcionarios = $funcionarioClass->listarAtivos();
+            $funcionario = $funcionarioClass->listarAtivos();
 
             // Obtém o ID do funcionário atualmente cadastrado na venda
             $idFuncionarioVenda = $venda->idFuncionario;
 
-            foreach ($funcionarios as $funcionario) {
+            foreach ($funcionario as $funcionario) {
                 // Verifica se o ID do funcionário sendo iterado no loop é igual ao ID do funcionário associado à venda
                 $selected = ($funcionario['idFuncionario'] == $idFuncionarioVenda) ? 'selected' : '';
 

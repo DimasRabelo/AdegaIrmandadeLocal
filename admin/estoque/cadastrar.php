@@ -64,7 +64,7 @@ if (isset($_POST['nomeEstoque'])) {
             <option selected disabled>Seleciona o Status do Estoque</option>
             <option value="ATIVO">ATIVO</option>
             <option value="DESATIVADO">DESATIVADO</option>
-            <option value="INATIVO">INATIVO</option>
+          
         </select>
     </div>
 

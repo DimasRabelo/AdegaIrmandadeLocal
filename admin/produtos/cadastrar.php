@@ -56,7 +56,8 @@ if (isset($_POST['nomeProduto'])){
         <select class="seleproduto" aria-label="Default select example" name="categoriaProduto" required>
             <option selected="">Selecione a Categoria do Produto</option>
             <option value="ALCOOLICO">ALCOÓLICO</option>
-            <option value="NAOALCOOLICO">NÃO ALCOÓLICO</option>
+            <option value="NAO ALCOOLICO">NÃO ALCOÓLICO</option>
+            <option value="TABACARIA">TABACARIA</option>
            
         </select>
     </div>
@@ -66,17 +67,17 @@ if (isset($_POST['nomeProduto'])){
             <option selected="">Seleciona o Status do Produto</option>
             <option value="ATIVO">ATIVO</option>
             <option value="DESATIVADO">DESATIVADO</option>
-            <option value="INATIVO">INATIVO</option>
+           
         </select>
     </div>
 
     <div>
-        <label for="precoCompraProduto">Preço de Compra R$:</label>
+        <label for="precoCompraProduto">Valor de Compra R$:</label>
         <input type="text" name="precoCompraProduto"  id="precoCompraProduto" required placeholder="digite o valor da compra" >
     </div>
 
     <div>
-        <label for="precoVendaProduto">Preço de Venda R$:</label>
+        <label for="precoVendaProduto">Valor de Venda R$:</label>
         <input type="text" name="precoVendaProduto" id="precoVendaProduto" required placeholder="digite o preço de venda">
     </div>
 

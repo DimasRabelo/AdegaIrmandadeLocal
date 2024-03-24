@@ -40,7 +40,6 @@
     </div>
 
     <div>
-
         <select class="seleVendas"   aria-label="Default select example" name="idFuncionario" id="idFuncionario" required>
             <option selected disabled>Selecione o Funcionário</option>
 
@@ -49,9 +48,9 @@
             require_once('class/funcionario.php');
 
             $funcionarioClass = new FuncionarioClass();
-            $funcionarios = $funcionarioClass->listarAtivos();
+            $funcionario = $funcionarioClass->listarAtivos();
 
-            foreach ($funcionarios as $funcionario) {
+            foreach ($funcionario as $funcionario) {
                 echo "<option value='{$funcionario['idFuncionario']}'>{$funcionario['nomeFuncionario']}</option>";
             }
             ?>

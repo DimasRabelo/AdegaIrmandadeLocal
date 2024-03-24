@@ -7,7 +7,9 @@
 h1,
 h2,
 h3,
-h4 {
+h4
+
+ {
     font-family: 'Secular One';
     font-size: 16px;
     text-align: center;
@@ -16,6 +18,7 @@ h4 {
     box-sizing: border-box;
     text-decoration: none;
 }
+textarea,
 select,
 input{
     text-transform: uppercase;
