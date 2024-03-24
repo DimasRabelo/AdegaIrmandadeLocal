@@ -10,9 +10,7 @@ if (isset($_SESSION['nomeUsuario']) && isset($_SESSION['fotoUsuario'])) {
 
 ?>
 
-<style>
 
-</style>
 
 
 

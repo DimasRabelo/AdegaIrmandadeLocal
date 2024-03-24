@@ -15,7 +15,7 @@ if (isset($_POST['nomeProduto'])) {
     $nomeProduto = $_POST['nomeProduto'];
     $descricaoProduto = $_POST['descricaoProduto'];
     $categoriaProduto = $_POST['categoriaProduto'];
-    $statusProduto = $_POST['$statusProduto'];
+    $statusProduto = $_POST['statusProduto'];
     $precoCompraProduto = $_POST['precoCompraProduto'];
     $precoVendaProduto = $_POST['precoVendaProduto'];
     $fornecedorProduto = $_POST['fornecedorProduto'];
@@ -112,13 +112,13 @@ if (isset($_POST['nomeProduto'])) {
     </div>
 
     <div>
-        <label for="precoCompraProduto">Preço de Compra</label>
-        <input type="text" name="precoCompraProduto" pattern="\d+(\.\d{1,2})?" id="precoCompraProduto" placeholder="digite o valor da compra" value="R$<?php echo $produto->precoCompraProduto ?>">
+        <label for="precoCompraProduto">Preço de Compra R$:</label>
+        <input type="text" name="precoCompraProduto" pattern="\d+(\.\d{1,2})?" id="precoCompraProduto" placeholder="digite o valor da compra" <?php echo $produto->precoCompraProduto ?>">
     </div>
 
     <div>
-        <label for="precoVendaProduto">Preço de Venda</label>
-        <input type="text" name="precoVendaProduto" pattern="\d+(\.\d{1,2})?" id="precoVendaProduto" placeholder="digite o preço de venda" value="R$<?php echo $produto->precoVendaProduto ?>">
+        <label for="precoVendaProduto">Preço de Venda R$:</label>
+        <input type="text" name="precoVendaProduto" pattern="\d+(\.\d{1,2})?" id="precoVendaProduto" placeholder="digite o preço de venda" <?php echo $produto->precoVendaProduto ?>">
     </div>
 
     <div>

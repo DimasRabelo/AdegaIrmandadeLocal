@@ -5,6 +5,7 @@ if (isset($_POST['nomeFuncionario'])) {
     $cargoFuncionario = $_POST['cargoFuncionario'];
     $dataNascFuncionario = $_POST['dataNascFuncionario'];
     $emailFuncionario = $_POST['emailFuncionario'];
+    $senhaFuncionario = $_POST['$senhaFuncionario'];
     $nivelFuncionario = $_POST['nivelFuncionario'];
     $dataAdmissaoFuncionario = $_POST['dataAdmissaoFuncionario'];
     $enderecoFuncionario = $_POST['enderecoFuncionario'];
@@ -46,7 +47,7 @@ $funcionario->nomeFuncionario = $nomeFuncionario;
 $funcionario->cargoFuncionario = $cargoFuncionario;
 $funcionario->dataNascFuncionario = $dataNascFuncionario;
 $funcionario->emailFuncionario = $emailFuncionario;
-$funcionario->senhaFuncionario = $senhaFunconario;
+$funcionario->senhaFuncionario = $senhaFuncionario;
 $funcionario->nivelFuncionario = $nivelFuncionario;
 $funcionario->dataAdmissaoFuncionario = $dataAdmissaoFuncionario;
 $funcionario->enderecoFuncionario = $enderecoFuncionario;
