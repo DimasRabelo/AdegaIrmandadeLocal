@@ -78,6 +78,7 @@ $listaDesativados = $galeria->listarDesativados();
                             <a href="index.php?p=galeria&g=ativar&id=<?php echo $linha['idGaleria']; ?>" onclick="return confirmarAtivacao()">
                                 <img src="./img/aceitar.png" alt="Ativar">
                             </a>
+                            <span style="margin-right: 70px;"></span>
                             <a href="index.php?p=galeria&g=desativar&id=<?php echo $linha['idGaleria'] ?>" onclick="return confirmarDesativacao()">
                                 <img src="./img/lixeira-de-reciclagem.png" alt="Desativar">
                             </a>

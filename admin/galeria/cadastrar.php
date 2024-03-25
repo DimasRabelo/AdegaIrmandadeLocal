@@ -25,7 +25,7 @@ if (isset($_POST['statusGaleria'])) {
 
     
 }
-var_dump($_FILES);
+//var_dump($_FILES);
 ?>
 
 <h1 class="h1Atual">Inserir Foto</h1>
@@ -38,7 +38,7 @@ var_dump($_FILES);
         <input type="file" id="fotoGaleria" name="fotoGaleria" required style="display: none;">
 
     </div>
-    <p>TAMANHO RECOMENDADO 220 DE LARGURA E 220 DE ALTURA</p>
+    <p class="textDimensoes">TAMANHO RECOMENDADO 220 DE LARGURA E 220 DE ALTURA</p>
     <div>
         <select aria-label="Default select example" name="statusGaleria" required>
             <option selected="">Seleciona o Status da foto</option>

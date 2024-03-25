@@ -1,8 +1,11 @@
 <?php
+// Inclua a classe ContatoClass
 require_once('class/contato.php');
+
+// Instancie a classe ContatoClass
 $contato = new ContatoClass();
 
-// Inicializa a lista completa de funcionários ativos, desativados e respondidos
+// Inicializa as listas de funcionários ativos, desativados e respondidos
 $listaAtivos = $contato->ListarAtivos();
 $listaDesativados = $contato->ListarDesativados();
 $listaRespondidos = $contato->ListarRespondidos();
@@ -15,14 +18,41 @@ if (isset($_POST['statusContato'])) {
     $statusFiltrar = $_POST['statusContato'];
 }
 
+// Inicializa a lista filtrada com base no status selecionado
+switch ($statusFiltrar) {
+    case 'ATIVO':
+        $listaFiltrada = $listaAtivos;
+        break;
+    case 'DESATIVADO':
+        $listaFiltrada = $listaDesativados;
+        break;
+    case 'RESPONDIDO':
+        $listaFiltrada = $listaRespondidos;
+        break;
+    default:
+        // Nenhum filtro aplicado, mantém a lista geral
+        $listaFiltrada = array_merge($listaAtivos, $listaDesativados, $listaRespondidos);
+        break;
+}
+
+// Filtra a lista com base no termo de pesquisa
+if (isset($_POST['searchInput'])) {
+    $searchTerm = strtolower($_POST['searchInput']);
+
+    // Filtra a lista com base no termo de pesquisa
+    $listaFiltrada = array_filter($listaFiltrada, function ($linha) use ($searchTerm) {
+        return stripos(strtolower($linha['nomeContato']), $searchTerm) !== false;
+    });
+}
+
 // Lógica para contar os funcionários ativos
 $totalAtivos = count($listaAtivos);
 
 // Lógica para contar os funcionários desativados
 $totalDesativados = count($listaDesativados);
-
 ?>
 
+<!-- HTML para o formulário de pesquisa -->
 <div>
     <form class="CampoPes" action="" method="POST">
         <input type="text" id="searchInput" name="searchInput" placeholder="Digite o Nome do Contato">
@@ -30,6 +60,7 @@ $totalDesativados = count($listaDesativados);
     </form>
 </div>
 
+<!-- HTML para o formulário de filtro de status -->
 <form class="formStatus" action="" method="POST">
     <div>
         <select class="seleAtual" aria-label="Default select example" name="statusContato">
@@ -52,6 +83,7 @@ $totalDesativados = count($listaDesativados);
     </div>
 </form>
 
+<!-- Tabela para exibir a lista de contatos -->
 <div class="table-container" id="arrastarMouse">
     <table>
         <caption>Lista de Email</caption>
@@ -68,23 +100,7 @@ $totalDesativados = count($listaDesativados);
         </thead>
         <tbody>
             <?php
-            // Filtra a lista com base no status selecionado
-            switch ($statusFiltrar) {
-                case 'ATIVO':
-                    $listaFiltrada = $listaAtivos;
-                    break;
-                case 'DESATIVADO':
-                    $listaFiltrada = $listaDesativados;
-                    break;
-                case 'RESPONDIDO':
-                    $listaFiltrada = $listaRespondidos;
-                    break;
-                default:
-                    // Nenhum filtro aplicado, mantém a lista geral
-                    $listaFiltrada = array_merge($listaAtivos, $listaDesativados, $listaRespondidos);
-                    break;
-            }
-
+            // Verifica se a lista filtrada está vazia
             if (!empty($listaFiltrada)) {
                 foreach ($listaFiltrada as $linha) : ?>
                     <tr>
@@ -98,7 +114,8 @@ $totalDesativados = count($listaDesativados);
                     </tr>
             <?php endforeach;
             } else {
-                echo "<tr><td colspan='8'>Nenhum dado disponível</td></tr>";
+                // Caso a lista esteja vazia, exibe uma mensagem
+                echo "<tr><td colspan='7'>Nenhum dado disponível</td></tr>";
             }
             ?>
         </tbody>

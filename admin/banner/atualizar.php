@@ -63,11 +63,6 @@ if (!empty($lista)) {
 }
 ?>
 
-<style>
-.textDimensoes{
-    color:#ffffff;
-}
-</style>    
 
 <h1 class="h1Atual">Alterar Foto</h1>
 <form action="index.php?p=banner&b=atualizar&id=<?php echo $banner->idBanner; ?> " method="POST" enctype="multipart/form-data">
