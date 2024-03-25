@@ -15,7 +15,7 @@ class ContatoClass {
 
     public $statusContato;
 
-    public function Inserir() {
+    public function inserir() {
         $sql = "INSERT INTO tblcontato (nomeContato, emailContato, telefoneContato, mensagemContato) 
         VALUES ('".$this->nomeContato."','".$this->emailContato."','".$this->telefoneContato."','".$this->mensagemContato."')";
     
@@ -28,7 +28,7 @@ class ContatoClass {
 
 }
 
-public function ListarAtivos(){
+public function listarativos(){
     
     $sql =  "SELECT * FROM tblcontato WHERE statusContato = 'ATIVO' ORDER BY idContato ASC";
     $conn = Conexao::LigarConexao();
@@ -38,7 +38,7 @@ public function ListarAtivos(){
     
 }
 
-public function ListarDesativados()
+public function listardesativados()
 {
     $sql = "SELECT * FROM tblcontato WHERE statusContato = 'DESATIVADO' ORDER BY idContato ASC";
     $conn = Conexao::LigarConexao();
@@ -47,7 +47,7 @@ public function ListarDesativados()
     return $lista;
 }
 
-public function ListarRespondidos()
+public function listarrespondidos()
 {
     $sql = "SELECT * FROM tblContato WHERE statusContato = 'RESPONDIDO' ORDER BY idContato ASC";
     $conn = Conexao::LigarConexao();

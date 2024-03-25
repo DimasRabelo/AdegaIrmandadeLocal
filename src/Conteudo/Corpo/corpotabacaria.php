@@ -2,11 +2,14 @@
 <!-- <section class="tabacaria wow animate__animated animate__fadeInUp"> -->
 
 <div class="bannerTabacaria">
-<?php if (!empty($lista)) : ?>
-        <div>
-            <img src="<?php echo 'src/imagens/' . $lista[2]['fotoBanner']; ?>" alt="<?php echo $lista[2]['altBanner']; ?>">
-        </div>
-    <?php endif; ?>
+  <?php if (!empty($lista)) : ?>
+    <div>
+      <a href="src/imagens/<?php echo $lista[2]['fotoBanner']; ?>" data-lightbox="roadtrip" data-title="bannerTabacaria">
+        <img src="src/imagens/<?php echo $lista[2]['fotoBanner']; ?>" alt="<?php echo $lista[2]['altBanner']; ?>">
+      </a>
+    </div>
+
+  <?php endif; ?>
 
 </div>
 
@@ -118,5 +121,3 @@
 
 <!-- Adicione mais miniaturas conforme necessário -->
 </div>
-
-

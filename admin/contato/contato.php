@@ -5,10 +5,10 @@ require_once('class/contato.php');
 // Instancie a classe ContatoClass
 $contato = new ContatoClass();
 
-// Inicializa as listas de funcionários ativos, desativados e respondidos
-$listaAtivos = $contato->ListarAtivos();
-$listaDesativados = $contato->ListarDesativados();
-$listaRespondidos = $contato->ListarRespondidos();
+// Inicializa as listas de ativos, desativados e respondidos
+$listaativos = $contato->listarativos();
+$listadesativados = $contato->listardesativados();
+$listarespondidos = $contato->listarrespondidos();
 
 // Inicializa a variável $statusFiltrar
 $statusFiltrar = 'ATIVO'; // Definindo como ativo por padrão
@@ -21,17 +21,17 @@ if (isset($_POST['statusContato'])) {
 // Inicializa a lista filtrada com base no status selecionado
 switch ($statusFiltrar) {
     case 'ATIVO':
-        $listaFiltrada = $listaAtivos;
+        $listaFiltrada = $listaativos;
         break;
     case 'DESATIVADO':
-        $listaFiltrada = $listaDesativados;
+        $listaFiltrada = $listadesativados;
         break;
     case 'RESPONDIDO':
-        $listaFiltrada = $listaRespondidos;
+        $listaFiltrada = $listarespondidos;
         break;
     default:
         // Nenhum filtro aplicado, mantém a lista geral
-        $listaFiltrada = array_merge($listaAtivos, $listaDesativados, $listaRespondidos);
+        $listaFiltrada = array_merge($listaativos, $listadesativados, $listarespondidos);
         break;
 }
 
@@ -46,10 +46,10 @@ if (isset($_POST['searchInput'])) {
 }
 
 // Lógica para contar os funcionários ativos
-$totalAtivos = count($listaAtivos);
+$totalativos = count($listaativos);
 
 // Lógica para contar os funcionários desativados
-$totalDesativados = count($listaDesativados);
+$totaldesativados = count($listadesativados);
 ?>
 
 <!-- HTML para o formulário de pesquisa -->
@@ -74,11 +74,11 @@ $totalDesativados = count($listaDesativados);
     </div>
     <div>
         <?php if ($statusFiltrar === 'ATIVO') : ?>
-            <p class="total">Total de ativos: <?php echo $totalAtivos; ?></p>
+            <p class="total">Total de ativos: <?php echo $totalativos; ?></p>
         <?php elseif ($statusFiltrar === 'DESATIVADO') : ?>
-            <p class="total">Total de desativados: <?php echo $totalDesativados; ?></p>
+            <p class="total">Total de desativados: <?php echo $totaldesativados; ?></p>
         <?php elseif ($statusFiltrar === 'RESPONDIDO') : ?>
-            <p class="total">Total de respondidos: <?php echo count($listaRespondidos); ?></p>
+            <p class="total">Total de respondidos: <?php echo count($listarespondidos); ?></p>
         <?php endif; ?>
     </div>
 </form>
