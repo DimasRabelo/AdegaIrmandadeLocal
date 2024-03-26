@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 19/03/2024 às 03:11
+-- Tempo de geração: 26/03/2024 às 01:12
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.0.30
 
@@ -210,31 +210,6 @@ INSERT INTO `tblgaleria` (`idGaleria`, `nomeGaleria`, `altGaleria`, `fotoGaleria
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `tblitensvendidos`
---
-
-CREATE TABLE `tblitensvendidos` (
-  `idItensVendido` int(11) NOT NULL,
-  `valorUnitario` double(10,2) NOT NULL,
-  `quantidadeVendida` int(11) NOT NULL,
-  `idProduto` int(11) NOT NULL,
-  `idVenda` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Despejando dados para a tabela `tblitensvendidos`
---
-
-INSERT INTO `tblitensvendidos` (`idItensVendido`, `valorUnitario`, `quantidadeVendida`, `idProduto`, `idVenda`) VALUES
-(1, 3.00, 5, 1, 1),
-(2, 5.00, 7, 2, 2),
-(4, 80.00, 1, 4, 4),
-(9, 4.00, 2, 9, 9),
-(14, 5.00, 3, 10, 10);
-
--- --------------------------------------------------------
-
---
 -- Estrutura para tabela `tblprodutos`
 --
 
@@ -322,8 +297,7 @@ INSERT INTO `tblvendas` (`idVenda`, `idFuncionario`, `dataVenda`, `horaVenda`, `
 (9, 9, '2023-11-05', '05:00:55', 'ATIVO', 70.00, 9),
 (10, 10, '2023-11-06', '05:00:55', 'ATIVO', 24.00, 10),
 (11, 4, '2024-02-22', '00:00:00', 'ATIVO', 10.00, 4),
-(12, 20, '2024-02-22', '00:00:00', 'ATIVO', 40.00, 5),
-(13, NULL, NULL, NULL, NULL, NULL, NULL);
+(12, 20, '2024-02-22', '00:00:00', 'ATIVO', 40.00, 5);
 
 -- --------------------------------------------------------
 
@@ -340,13 +314,37 @@ CREATE TABLE `vwprodutos` (
 -- --------------------------------------------------------
 
 --
+-- Estrutura stand-in para view `vwtotalvendasporano`
+-- (Veja abaixo para a visão atual)
+--
+CREATE TABLE `vwtotalvendasporano` (
+`ano` int(4)
+,`total_vendas` varchar(419)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura stand-in para view `vwvendaspormesanofuncionario`
+-- (Veja abaixo para a visão atual)
+--
+CREATE TABLE `vwvendaspormesanofuncionario` (
+`nomeFuncionario` varchar(50)
+,`ValorTotalVenda` varchar(419)
+,`Mes` varchar(9)
+,`Ano` int(4)
+);
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura stand-in para view `vw_produtos_vendidos`
 -- (Veja abaixo para a visão atual)
 --
 CREATE TABLE `vw_produtos_vendidos` (
 `nomeProduto` varchar(255)
-,`precoVendaProduto` double(10,2)
-,`total_vendido` double(19,2)
+,`precoVendaProduto` varchar(419)
+,`total_vendido` varchar(419)
 ,`Unidades` double(17,0)
 );
 
@@ -408,11 +406,29 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- --------------------------------------------------------
 
 --
+-- Estrutura para view `vwtotalvendasporano`
+--
+DROP TABLE IF EXISTS `vwtotalvendasporano`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vwtotalvendasporano`  AS SELECT year(`tblvendas`.`dataVenda`) AS `ano`, concat('R$ ',format(sum(`tblvendas`.`valorTotalVenda`),2,'pt_BR')) AS `total_vendas` FROM `tblvendas` GROUP BY year(`tblvendas`.`dataVenda`) ORDER BY year(`tblvendas`.`dataVenda`) ASC ;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para view `vwvendaspormesanofuncionario`
+--
+DROP TABLE IF EXISTS `vwvendaspormesanofuncionario`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vwvendaspormesanofuncionario`  AS SELECT `f`.`nomeFuncionario` AS `nomeFuncionario`, concat('R$ ',format(sum(`v`.`valorTotalVenda`),2,'pt_BR')) AS `ValorTotalVenda`, monthname(`v`.`dataVenda`) AS `Mes`, year(`v`.`dataVenda`) AS `Ano` FROM (`tblvendas` `v` join `tblfuncionarios` `f` on(`v`.`idFuncionario` = `f`.`idFuncionario`)) GROUP BY `f`.`nomeFuncionario`, year(`v`.`dataVenda`), month(`v`.`dataVenda`) ;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura para view `vw_produtos_vendidos`
 --
 DROP TABLE IF EXISTS `vw_produtos_vendidos`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_produtos_vendidos`  AS SELECT `p`.`nomeProduto` AS `nomeProduto`, `p`.`precoVendaProduto` AS `precoVendaProduto`, sum(`v`.`valorTotalVenda`) AS `total_vendido`, round(sum(`v`.`valorTotalVenda`) / `p`.`precoVendaProduto`,0) AS `Unidades` FROM (`tblvendas` `v` join `tblprodutos` `p` on(`v`.`idProduto` = `p`.`idProduto`)) GROUP BY `p`.`nomeProduto` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_produtos_vendidos`  AS SELECT `p`.`nomeProduto` AS `nomeProduto`, concat('R$ ',format(`p`.`precoVendaProduto`,2,'pt_BR')) AS `precoVendaProduto`, concat('R$ ',format(sum(`v`.`valorTotalVenda`),2,'pt_BR')) AS `total_vendido`, round(sum(`v`.`valorTotalVenda`) / `p`.`precoVendaProduto`,0) AS `Unidades` FROM (`tblvendas` `v` join `tblprodutos` `p` on(`v`.`idProduto` = `p`.`idProduto`)) GROUP BY `p`.`nomeProduto` ;
 
 -- --------------------------------------------------------
 
@@ -486,14 +502,6 @@ ALTER TABLE `tblgaleria`
   ADD PRIMARY KEY (`idGaleria`);
 
 --
--- Índices de tabela `tblitensvendidos`
---
-ALTER TABLE `tblitensvendidos`
-  ADD PRIMARY KEY (`idItensVendido`),
-  ADD KEY `vendidosProdutos` (`idProduto`),
-  ADD KEY `vendidosVendas` (`idVenda`);
-
---
 -- Índices de tabela `tblprodutos`
 --
 ALTER TABLE `tblprodutos`
@@ -548,12 +556,6 @@ ALTER TABLE `tblgaleria`
   MODIFY `idGaleria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT de tabela `tblitensvendidos`
---
-ALTER TABLE `tblitensvendidos`
-  MODIFY `idItensVendido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
-
---
 -- AUTO_INCREMENT de tabela `tblprodutos`
 --
 ALTER TABLE `tblprodutos`
@@ -580,13 +582,6 @@ ALTER TABLE `tblvendas`
 --
 ALTER TABLE `tblestoque`
   ADD CONSTRAINT `estoqueProduto` FOREIGN KEY (`idProduto`) REFERENCES `tblprodutos` (`idProduto`);
-
---
--- Restrições para tabelas `tblitensvendidos`
---
-ALTER TABLE `tblitensvendidos`
-  ADD CONSTRAINT `vendidosProdutos` FOREIGN KEY (`idProduto`) REFERENCES `tblprodutos` (`idProduto`),
-  ADD CONSTRAINT `vendidosVendas` FOREIGN KEY (`idVenda`) REFERENCES `tblvendas` (`idVenda`);
 
 --
 -- Restrições para tabelas `tblvendas`
