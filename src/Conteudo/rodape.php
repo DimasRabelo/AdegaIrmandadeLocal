@@ -15,12 +15,12 @@
 
             <ul>
                 <li>
-                    <a href="#">
+                    <a href="https://www.facebook.com/irmandadeadega.lounge.tabacaria">
                         <img src="./src/imagens/iconeFacebook.svg" alt="">
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="https://www.instagram.com/adega.tabacaria.irmandade/">
                         <img src="./src/imagens/iconeInstagram.svg" alt="">
                     </a>
                 </li>
