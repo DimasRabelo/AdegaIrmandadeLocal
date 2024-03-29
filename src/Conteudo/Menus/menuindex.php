@@ -10,13 +10,16 @@ if (isset($_SESSION['nomeUsuario']) && isset($_SESSION['fotoUsuario'])) {
 
 ?>
 
-
-
-
-
 <header>
 
+	<div class="Menuabrirmobile">
+		<button class="abrir-menu"></button>
+		<h2>MENU</h2>
+	</div>
 	<nav class="menu animate__animated animate__fadeInUp" <?php echo (isset($nomeUsuario) && isset($fotoUsuario)) ? 'logado' : 'deslogado'; ?>>
+
+		<button class="fechar-menu"></button>
+
 
 		<ul>
 			<li>
@@ -65,4 +68,5 @@ if (isset($_SESSION['nomeUsuario']) && isset($_SESSION['fotoUsuario'])) {
 
 
 
-</header>
+
+	</div>
