@@ -28,6 +28,13 @@ $(document).ready(function () {
 });
 
 
+
+
+
+
+
+
+
 $(document).ready(function(){
   $('.tabacaria-slider-for').slick({
     slidesToShow: 1,
