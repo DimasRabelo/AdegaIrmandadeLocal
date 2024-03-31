@@ -24,10 +24,14 @@
 
 }
 
-@media (max-width:600px) {
+/* CSS para telas até 600 pixels de largura */
 
+@media (max-width: 600px) {
 
+    /* Esconder elementos não necessários */
+   
 
+    /* Estilizar o menu mobile */
     .menu {
         background: rgba(254, 249, 249, 0.624);
         height: 100%;
@@ -35,26 +39,24 @@
         z-index: 10;
         width: 100%;
         top: 0;
-        margin: 0;
-        right: -813px;
+        right: -813px; /* Ajuste para esconder o menu */
         transition: right .5s ease-in-out;
     }
 
-
-
-
-
-
+    /* Mostrar o menu mobile quando aberto */
     .menu-mobile .menu {
         right: -319px;
     }
 
+    /* Estilizar o botão de abrir menu */
     .abrir-menu {
         background: url(../imagens/botaomenu.png);
         background-size: cover;
-        width: 22%;
+        width: 20%;
+        margin: 1px 14px;
     }
 
+    /* Estilizar os itens do menu */
     .Menuabrirmobile {
         display: flex;
         justify-content: flex-start;
@@ -66,22 +68,21 @@
     .Menuabrirmobile h2 {
         font-family: "Secular One";
         color: #ffffff;
-        font-size: 3.0em;
-        padding: 27px 0px;
-
+        font-size: 2.1em;
+        padding: 32px 0px;
     }
-
 
     .menu .fechar-menu {
         background: url(../imagens/botaofechar.png);
         background-size: cover;
         padding: 6%;
-        width: 0%;
+        width: 0%; /* Ajuste para esconder o botão */
         border: 0;
         display: block;
         margin: 0px 15px -35px;
     }
 
+    /* Estilizar o conteúdo do menu */
     .menu {
         flex-direction: column;
         justify-content: space-around;
@@ -91,15 +92,6 @@
         width: 100%;
         flex-direction: column;
         margin: 21px;
-
-
-    }
-
-    .menu button {
-        width: 0;
-        margin: 0 auto;
-
-
     }
 
     .menu li {
@@ -109,12 +101,9 @@
         flex-direction: column;
     }
 
-
-
-
+    /* Ajustes de largura para botões e outros elementos */
     .btnresponsivobebida {
         width: 26%;
-
     }
 
     .btnpadding {
@@ -130,34 +119,29 @@
         margin: 10px -5px;
     }
 
-    /* pagina bebidas */
+    /* Ajustes específicos para diferentes páginas */
     .brejas {
         flex-direction: column;
     }
 
-    /* ### Pagina Galeria e Videos ####*/
-
     .videos img {
         width: 50% !important;
-
     }
 
     .galeria img {
-        max-width: 525px;
+        max-width: 200px;
         display: flex;
         justify-content: center;
         align-items: center;
+         padding: 27px 31px;
     }
 
     .galeria .slick-center {
         transform: scale(1);
         padding: 0;
-
-
     }
 
     .tabacaria-slider-nav div {
-
         margin-right: 0px !important;
         width: 100%;
     }
@@ -172,14 +156,10 @@
         display: none;
     }
 
-
-    /* ### CONTATO ####*/
+    /* Ajustes para formulários de contato */
     .contato form input[type="submit"] {
         width: 60% !important;
     }
-
-
-
-    /* ### RODAPÉ ###### */
-
 }
+
+/* Outros estilos para telas maiores podem ser definidos fora desta media query */

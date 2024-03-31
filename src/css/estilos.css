@@ -240,21 +240,3 @@ text-align: center;
 }
 
 
-.menu.deslogado .btnpadding {
-    width: 100%;
-}
-
-.menu.logado .btnpadding {
-    width: 60%;
-}
-
-.btnfotologado {
-    max-width: 100px;
-    max-height: 100px;
-}
-
-.desco a {
-    text-decoration: none;
-
-
-}

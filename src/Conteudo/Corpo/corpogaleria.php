@@ -13,30 +13,19 @@
 
 
 
-<h class="evento">VIDEOS</h>
+<h2 class="evento">VIDEOS</h2>
 <div class="site">
-
-
     <div id="carouselExample" class="carousel slide">
         <div class="carousel-inner">
-
-
-            <div class="carousel-item active ">
-                <iframe width="100%" height="600" src="https://www.youtube.com/embed/ct3xxqCuqWg" title="Adega Lounge e Tabacaria Irmandade Localizado na rua Manoel Bueno da fonseca,46" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
-
-                </iframe>
-
+            <div class="carousel-item active">
+                <iframe class="video" width="100%" height="600" src="https://www.youtube.com/embed/ct3xxqCuqWg?enablejsapi=1&rel=0" title="Video 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
             <div class="carousel-item">
-                <iframe width="100%" height="600" src="https://www.youtube.com/embed/wFP3Vte7mtY" title="Adega Lounge e Tabacaria Irmandade Localizado na rua Manoel Bueno da fonseca,46" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
-                </iframe>
+                <iframe class="video" width="100%" height="600" src="https://www.youtube.com/embed/wFP3Vte7mtY?enablejsapi=1&rel=0" title="Video 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
-
-            <div class="carousel-item ">
-                <iframe width="100%" height="600" src="https://www.youtube.com/embed/Kskj9xfOCY" title=" de setembro de 03" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <div class="carousel-item">
+                <iframe class="video" width="100%" height="600" src="https://www.youtube.com/embed/Kskj9xfOCY?enablejsapi=1&rel=0" title="Video 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
-
-
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -48,3 +37,17 @@
         </button>
     </div>
 </div>
+
+<script>
+    var videos = document.querySelectorAll('.video');
+
+    function stopVideos() {
+        videos.forEach(function (video) {
+            video.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+        });
+    }
+
+    var carousel = document.getElementById('carouselExample');
+    carousel.addEventListener('slid.bs.carousel', stopVideos);
+</script>
+

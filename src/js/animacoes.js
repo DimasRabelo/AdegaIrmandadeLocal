@@ -4,6 +4,7 @@ $(document).ready(function () {
     centerPadding: '5%',
     slidesToShow: 7,
     autoplay: true,
+    infinite: true,
     responsive: [
       {
         breakpoint: 1001,
@@ -121,50 +122,6 @@ function EnviarWhats(){
 
 
 }
-
-
-
-
-
-
-
-
-
-
- 
-  
- 
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
