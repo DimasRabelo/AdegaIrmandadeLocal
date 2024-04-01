@@ -29,7 +29,7 @@
 @media (max-width: 600px) {
 
     /* Esconder elementos não necessários */
-   
+
 
     /* Estilizar o menu mobile */
     .menu {
@@ -39,7 +39,8 @@
         z-index: 10;
         width: 100%;
         top: 0;
-        right: -813px; /* Ajuste para esconder o menu */
+        right: -813px;
+        /* Ajuste para esconder o menu */
         transition: right .5s ease-in-out;
     }
 
@@ -76,7 +77,8 @@
         background: url(../imagens/botaofechar.png);
         background-size: cover;
         padding: 6%;
-        width: 0%; /* Ajuste para esconder o botão */
+        width: 0%;
+        /* Ajuste para esconder o botão */
         border: 0;
         display: block;
         margin: 0px 15px -35px;
@@ -99,6 +101,11 @@
         width: 100%;
         display: flex;
         flex-direction: column;
+    }
+
+    .Refrigerantes img {
+        width: 100%;
+
     }
 
     /* Ajustes de largura para botões e outros elementos */
@@ -133,12 +140,18 @@
         display: flex;
         justify-content: center;
         align-items: center;
-         padding: 27px 31px;
+        padding: 27px 31px;
     }
 
     .galeria .slick-center {
         transform: scale(1);
         padding: 0;
+    }
+
+    .carousel-control-next-icon,
+    .carousel-control-prev-icon {
+        width: 3rem;
+        height: 3rem;
     }
 
     .tabacaria-slider-nav div {
@@ -160,16 +173,40 @@
     .contato form input[type="submit"] {
         width: 60% !important;
     }
+
     .contato form {
-     
+
         flex-direction: column;
         align-items: center;
         margin: 20px;
     }
+
     .logo img {
         width: 30% !important;
 
+    }
+
+    /* Outros estilos para telas maiores podem ser definidos fora desta media query */
 }
 
-/* Outros estilos para telas maiores podem ser definidos fora desta media query */
+@media (max-width: 1000px) {
+
+    .bannerBreja img {
+        display: none;
+    }
+
+    .bannerDestilado img {
+        width: 100%;
+    }
+
+    .bannerTabacaria img {
+        width: 100%;
+    }
+
+    .tabacaria-slider-for img {
+        width: 82%!important;
+    }
+    .contato form input[type="submit"]{
+        width: 76%!important;
+    }
 }
