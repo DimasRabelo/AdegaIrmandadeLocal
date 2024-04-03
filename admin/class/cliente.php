@@ -119,22 +119,6 @@ public function desativar()
       $conn->exec($query);
   }
 
-  public function getNome()
-  {
-      return $this->nomeUsuario;
-  }
-
-  public function getFoto()
-  {
-      return $this->fotoUsuario;
-  }
-
-  public function getTipo() {
-    return $this->tipoUsuario;
-}
-
-
-
   public function verificarLogin()
   {
  
