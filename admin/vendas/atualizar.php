@@ -21,7 +21,7 @@ if (isset($_POST['statusVenda'])) {
     $idProduto = $_POST['idProduto'];
 
     $venda->statusVenda = $statusVenda;
-    $venda->valorTotalVenda = $valorTotalVenda;
+    $venda->quantidadeVenda = $quantidadeVenda;
     $venda->idFuncionario = $idFuncionario;
     $venda->idProduto = $idProduto;
 
@@ -58,8 +58,8 @@ if (isset($_POST['statusVenda'])) {
 
 
     <div>
-        <label for="valorTotalVenda"> Valor Total R$:</label>
-        <input type="text" name="valorTotalVenda" id="valorTotalVenda" placeholder="digite o valor" value="<?php echo $venda->valorTotalVenda; ?>">
+        <label for="quantidadeVenda"> Valor Total R$:</label>
+        <input type="text" name="quantidadeVenda" id="quantidadeVenda" placeholder="digite o valor" value="<?php echo $venda->quantidadeVenda; ?>">
     </div>
 
     <div>

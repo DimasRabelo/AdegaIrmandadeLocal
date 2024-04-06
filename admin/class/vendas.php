@@ -6,7 +6,7 @@ class VendasClass
 {
     public $idVenda;
     public $statusVenda;
-    public $valorTotalVenda;
+    public $quantidadeVenda;
 
     public $horaVenda;
 
@@ -21,7 +21,7 @@ class VendasClass
     $sql = "SELECT
                 v.idVenda,
                 v.statusVenda,
-                v.valorTotalVenda,
+                v.quantidadeVenda,
                 v.horaVenda,
                 v.dataVenda,
                 f.nomeFuncionario,
@@ -49,7 +49,7 @@ class VendasClass
         $sql = "SELECT
         v.idVenda,
         v.statusVenda,
-        v.valorTotalVenda,
+        v.quantidadeVenda,
         v.horaVenda,
         v.dataVenda,
         f.nomeFuncionario,
@@ -84,14 +84,14 @@ class VendasClass
     {
         $query = "INSERT INTO tblvendas (
              statusVenda,
-            valorTotalVenda, 
+            quantidadeVenda, 
             idFuncionario, 
             idProduto
           
            
         ) VALUES (
             '{$this->statusVenda}',
-            '{$this->valorTotalVenda}',
+            '{$this->quantidadeVenda}',
             '{$this->idFuncionario}',
             '{$this->idProduto}'
            
@@ -120,7 +120,7 @@ class VendasClass
         foreach ($lista as $linha) {
            
             $this->statusVenda = $linha['statusVenda'];
-            $this->valorTotalVenda = $linha['valorTotalVenda'];
+            $this->quantidadeVenda = $linha['quantidadeVenda'];
             $this->idFuncionario = $linha['idFuncionario'];
             $this->idProduto = $linha['idProduto'];
         }
@@ -130,7 +130,7 @@ class VendasClass
     {
         $query = "UPDATE tblvendas 
   SET  statusVenda = '" . $this->statusVenda . "',
-      valorTotalVenda = '" . $this->valorTotalVenda . "',
+      quantidadeVenda = '" . $this->quantidadeVenda . "',
       idFuncionario = '" . $this->idFuncionario . "',
       idProduto = '" . $this->idProduto . "'
       WHERE tblvendas.idVenda = '" . $this->idVenda . "'";
