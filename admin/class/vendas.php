@@ -26,7 +26,7 @@ class VendasClass
                 v.dataVenda,
                 f.nomeFuncionario,
                 p.nomeProduto,
-                p.precoCompraProduto
+                p.precoVendaProduto
             FROM
                 tblvendas v
             INNER JOIN
@@ -54,7 +54,7 @@ class VendasClass
         v.dataVenda,
         f.nomeFuncionario,
         p.nomeProduto,
-        p.precoCompraProduto
+        p.precoVendaProduto
     FROM
         tblvendas v
     INNER JOIN
