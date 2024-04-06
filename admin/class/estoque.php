@@ -6,7 +6,7 @@ class EstoqueClass
 {
 
     public $idEstoque;
-    public $nomeEstoque;
+  
 
     public $quantidadeEstoque;
 
@@ -18,7 +18,6 @@ class EstoqueClass
 {
     $sql = "SELECT
         m.idEstoque,
-        m.nomeEstoque,
         m.quantidadeEstoque,
         m.dataCadastroEstoque,
         m.dataAtualiEstoque,
@@ -49,7 +48,6 @@ public function listarEstoqueDesativados()
 {
     $sql = "SELECT
         m.idEstoque,
-        m.nomeEstoque,
         m.quantidadeEstoque,
         m.dataCadastroEstoque,
         m.dataAtualiEstoque,
@@ -92,14 +90,14 @@ public function ativar()
     public function Cadastrar()
     {
         $query = "INSERT INTO tblestoque (
-             nomeEstoque,
+            
             quantidadeEstoque, 
             statusEstoque, 
             idProduto
           
            
         ) VALUES (
-            '{$this->nomeEstoque}',
+           
             '{$this->quantidadeEstoque}',
             '{$this->statusEstoque}',
             '{$this->idProduto}'
@@ -127,7 +125,6 @@ public function ativar()
         $lista = $resultado->fetchAll();
 
         foreach ($lista as $linha) {
-            $this->nomeEstoque = $linha['nomeEstoque'];
             $this->quantidadeEstoque = $linha['quantidadeEstoque'];
             $this->statusEstoque = $linha['statusEstoque'];
             $this->idProduto = $linha['idProduto'];
@@ -137,7 +134,7 @@ public function ativar()
     public function Atualizar()
     {
         $query = "UPDATE tblestoque 
-     SET  nomeEstoque = '" . $this->nomeEstoque . "',
+     SET
          quantidadeEstoque = '" . $this->quantidadeEstoque . "',
          statusEstoque = '" . $this->statusEstoque . "',
          idProduto = '" . $this->idProduto . "'

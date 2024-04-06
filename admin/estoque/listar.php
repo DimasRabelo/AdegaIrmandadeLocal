@@ -24,15 +24,13 @@ if (isset($_POST['statusEstoque'])) {
     }
 }
 
-// Verifica se a pesquisa por nome foi submetida
 if (isset($_POST['searchInput'])) {
     $searchTerm = strtolower($_POST['searchInput']);
 
-    // Filtra a lista com base no nome do funcionário ou no nome do produto
+    // Filtra a lista com base no nome do produto
     $listaFiltrada = array_filter($listaFiltrada, function ($linha) use ($searchTerm) {
-        $nomeEstoque = strtolower($linha['nomeEstoque']);
         $nomeProduto = strtolower($linha['nomeProduto']);
-        return stripos($nomeEstoque, $searchTerm) !== false || stripos($nomeProduto, $searchTerm) !== false;
+        return stripos($nomeProduto, $searchTerm) !== false;
     });
 }
 
@@ -112,7 +110,7 @@ $totalDesativados = count($listaDesativados);
             <thead>
                 <tr>
 
-                    <th>Estoque</th>
+                    
                     <?php if (empty($statusFiltrar) || $statusFiltrar === 'LISTA GERAL') : ?>
                         <th class="spanstatus">Status</th>
                     <?php endif; ?>
@@ -136,7 +134,7 @@ $totalDesativados = count($listaDesativados);
                 <?php foreach ($listaFiltrada as $linha) : ?>
                     <?php if (empty($statusFiltrar) || $linha['statusEstoque'] === $statusFiltrar) : ?>
                         <tr>
-                            <td><?php echo $linha['nomeEstoque'] ?></td>
+                          
 
 
                             <?php if (empty($statusFiltrar) || $statusFiltrar === 'LISTA GERAL') : ?>

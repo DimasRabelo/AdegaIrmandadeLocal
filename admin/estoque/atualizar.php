@@ -5,16 +5,16 @@ echo $id;
 require_once('class/estoque.php');
 $estoque = new EstoqueClass($id);
 
-echo $estoque->nomeEstoque;
+//echo $estoque->nomeEstoque;
 
-if (isset($_POST['nomeEstoque'])) {
+if (isset($_POST['quantidadeEstoque'])) {
 
-    $nomeEstoque = $_POST['nomeEstoque'];
+   
     $quantidadeEstoque = $_POST['quantidadeEstoque'];
     $statusEstoque = $_POST['statusEstoque'];
     $idProduto = $_POST['idProduto'];
 
-    $estoque->nomeEstoque = $nomeEstoque;
+   
     $estoque->quantidadeEstoque = $quantidadeEstoque;
     $estoque->statusEstoque = $statusEstoque;
     $estoque->idProduto = $idProduto;
@@ -30,10 +30,7 @@ if (isset($_POST['nomeEstoque'])) {
 <h1>Atualizar Estoque</h1>
 <form class="formEstoque" action="index.php?p=estoque&e=atualizar&id=<?php echo $estoque->idEstoque ?>" method="POST" enctype="multipart/form-data">
 
-    <div>
-        <label for="nomeEstoque"> Nome do Estoque</label>
-        <input type="text" name="nomeEstoque" id="nomeEstoque" required placeholder="nome estoque" value="<?php echo $estoque->nomeEstoque; ?>">
-    </div>
+    
 
 
 

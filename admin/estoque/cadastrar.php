@@ -1,7 +1,7 @@
 <?php
-if (isset($_POST['nomeEstoque'])) {
+if (isset($_POST['quantidadeEstoque'])) {
 
-    $nomeEstoque = $_POST['nomeEstoque'];
+   
     $quantidadeEstoque = $_POST['quantidadeEstoque'];
     $statusEstoque = $_POST['statusEstoque'];
     $idProduto = $_POST['idProduto'];
@@ -10,7 +10,7 @@ if (isset($_POST['nomeEstoque'])) {
 
     $estoque = new EstoqueClass();
 
-    $estoque->nomeEstoque = $nomeEstoque;
+  
     $estoque->quantidadeEstoque = $quantidadeEstoque;
     $estoque->statusEstoque = $statusEstoque;
     $estoque->idProduto = $idProduto;
@@ -22,10 +22,7 @@ if (isset($_POST['nomeEstoque'])) {
 <h1  class="h1Atual">Cadastrar Estoque</h1>
 <form class="formEstoque" action="index.php?p=estoque&e=cadastrar" method="POST" enctype="multipart/form-data">
 
-    <div>
-        <label for="nomeEstoque"> Nome do Estoque:</label>
-        <input type="text" name="nomeEstoque" id="nomeEstoque" required placeholder="nome estoque">
-    </div>
+    
 
     <div>
 

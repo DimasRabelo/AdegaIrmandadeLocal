@@ -13,7 +13,7 @@ $data_vendas = array();
 foreach ($dados_vendas as $venda) {
     $data_vendas[] = array(
         'name' => $venda['nomeFuncionario'],
-        'y' => intval($venda['quantidadeVenda'])
+        'y' => intval($venda['totalVenda'])
     );
 }
 
