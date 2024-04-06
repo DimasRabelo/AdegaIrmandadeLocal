@@ -48,24 +48,18 @@ $lista = $banner->ListarBanner();
 
 
 <tbody>
-
     <div>
         <table>
             <caption> Lista de Banner</caption>
 
             <thead>
-
                 <tr>
-
                     <th>IMAGENS DO BANNER DAS PÁGINAS</th>
                     <th>PÁGINA</th>
-                   
-                   
                 </tr>
             </thead>
             <tbody>
                 <?php foreach ($lista as $linha) : ?>
-
                     <tr>
                         <td class="BannerFoto">
                             <a href="../src/imagens/<?php echo $linha['fotoBanner'] ?>" data-lightbox="<?php echo $linha['nomeBanner'] ?>" data-title="<?php echo $linha['nomeBanner'] ?>">
@@ -74,18 +68,17 @@ $lista = $banner->ListarBanner();
                             <a href="index.php?p=banner&b=atualizar&id=<?php echo $linha['idBanner']; ?>">
                                 <p class="alterar">Alterar Foto do Banner</p>
                             </a>
-                            <td><?php echo $linha['paginaDestino'] ?></td>
-                        
                         </td>
-                        
-
+                        <!-- Coluna da página de destino clicável -->
+                        <td>
+                            <a href="<?php echo $linha['paginaDestino']; ?>"><?php echo $linha['paginaDestino']; ?></a>
+                        </td>
                     </tr>
                 <?php endforeach ?>
             </tbody>
         </table>
     </div>
-    </tr>
-
 </tbody>
+
 </table>
 </div>
