@@ -17,54 +17,56 @@ class VendasClass
 
 
     public function listarVendasAtivas()
-{
-    $sql = "SELECT
-                v.idVenda,
-                v.statusVenda,
-                v.quantidadeVenda,
-                v.horaVenda,
-                v.dataVenda,
-                f.nomeFuncionario,
-                p.nomeProduto,
-                p.precoVendaProduto
-            FROM
-                tblvendas v
-            INNER JOIN
-                tblfuncionarios f ON v.idFuncionario = f.idFuncionario
-            INNER JOIN
-                tblprodutos p ON v.idProduto = p.idProduto
-            WHERE
-                v.statusVenda = 'ATIVO'";
-
-    $conn = Conexao::LigarConexao();
-    $resultado = $conn->query($sql);
-    $lista = $resultado->fetchAll();
-    return $lista;
-}
+    {
+        $sql = "SELECT
+                    v.idVenda,
+                    v.statusVenda,
+                    v.quantidadeVenda,
+                    v.horaVenda,
+                    v.dataVenda,
+                    f.nomeFuncionario,
+                    p.nomeProduto,
+                    p.precoVendaProduto,
+                    (v.quantidadeVenda * p.precoVendaProduto) AS totalVenda
+                FROM
+                    tblvendas v
+                INNER JOIN
+                    tblfuncionarios f ON v.idFuncionario = f.idFuncionario
+                INNER JOIN
+                    tblprodutos p ON v.idProduto = p.idProduto
+                WHERE
+                    v.statusVenda = 'ATIVO'";
+    
+        $conn = Conexao::LigarConexao();
+        $resultado = $conn->query($sql);
+        $lista = $resultado->fetchAll();
+        return $lista;
+    }
+    
 
     public function listarVendasDesativadas()
     {
         
         // $sql =  "SELECT * FROM tblvendas ORDER BY idVenda ASC"; //
         $sql = "SELECT
-        v.idVenda,
-        v.statusVenda,
-        v.quantidadeVenda,
-        v.horaVenda,
-        v.dataVenda,
-        f.nomeFuncionario,
-        p.nomeProduto,
-        p.precoVendaProduto
-    FROM
-        tblvendas v
-    INNER JOIN
-        tblfuncionarios f ON v.idFuncionario = f.idFuncionario
-    INNER JOIN
-        tblprodutos p ON v.idProduto = p.idProduto
-    WHERE
-        v.statusVenda = 'DESATIVADO'";
-
-
+                    v.idVenda,
+                    v.statusVenda,
+                    v.quantidadeVenda,
+                    v.horaVenda,
+                    v.dataVenda,
+                    f.nomeFuncionario,
+                    p.nomeProduto,
+                    p.precoVendaProduto,
+                    (v.quantidadeVenda * p.precoVendaProduto) AS totalVenda
+                FROM
+                    tblvendas v
+                INNER JOIN
+                    tblfuncionarios f ON v.idFuncionario = f.idFuncionario
+                INNER JOIN
+                    tblprodutos p ON v.idProduto = p.idProduto
+                WHERE
+                    v.statusVenda = 'ATIVO'";
+    
         $conn = Conexao::LigarConexao();
         $resultado = $conn->query($sql);
         $lista = $resultado->fetchAll();

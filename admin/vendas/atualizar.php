@@ -58,7 +58,7 @@ if (isset($_POST['statusVenda'])) {
 
 
     <div>
-        <label for="quantidadeVenda"> Valor Total R$:</label>
+        <label for="quantidadeVenda"> Quanitdade Vendida:</label>
         <input type="text" name="quantidadeVenda" id="quantidadeVenda" placeholder="digite o valor" value="<?php echo $venda->quantidadeVenda; ?>">
     </div>
 

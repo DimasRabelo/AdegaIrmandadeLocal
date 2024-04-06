@@ -122,6 +122,7 @@ $totalDesativados = count($listaDesativados);
                     <th>Data</th>
                     <th>Hora</th>
                     <th>Quantidade Venda</th>
+                    <th>Valor Total em Reais</th>
                     <?php if ($statusFiltrar !== 'DESATIVADO') : ?>
                         <th>Alterar ou Desativar</th>
                         
@@ -166,7 +167,7 @@ $totalDesativados = count($listaDesativados);
                             <td><?php echo date('d/m/Y', strtotime($linha['dataVenda'])) ?></td>
                             <td><?php echo $linha['horaVenda'] ?></td>
                             <td><?php echo $linha['quantidadeVenda'] ?></td>
-
+                            <td><?php echo 'R$ '. $linha['totalVenda'] ?></td>
 
                             <?php if ($statusFiltrar !== 'DESATIVADO') : ?>
                                 <td class="btngrudsicone">
