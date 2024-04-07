@@ -6,7 +6,7 @@ $banner = new BannerClass($id);
 if (isset($_POST['nomeBanner'])) {
 
     $nomeBanner = $_POST['nomeBanner'];
-    $paginaDestino = $_POST['paginaDestino'];
+  
 
 
     //foto
@@ -32,7 +32,7 @@ if (isset($_POST['nomeBanner'])) {
     // fim da empty
 
     $banner->nomeBanner = $nomeBanner;
-    $banner->paginaDestino = $paginaDestino;
+   
     $banner->fotoBanner = $fotoBanner;
 
     $banner->Atualizar();
@@ -90,9 +90,10 @@ if (!empty($lista)) {
         <label for="nomeBanner">Nome do Banner</label>
         <input type="text" name="nomeBanner" id="nomeBanner" placeholder="Informe o Nome do Banner" value="<?php echo $banner->nomeBanner; ?>">
     </div>
-    <td>
-        <a href="<?php echo $banner->paginaDestino; ?>"><?php echo $banner->'paginaDestino']; ?></a>
-    </td>
+    
+
+
+
     <div>
         <button type="submit">Alterar Banner</button>
     </div>

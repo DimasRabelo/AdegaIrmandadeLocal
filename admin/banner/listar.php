@@ -55,7 +55,7 @@ $lista = $banner->ListarBanner();
             <thead>
                 <tr>
                     <th>IMAGENS DO BANNER DAS PÁGINAS</th>
-                    <th>PÁGINA</th>
+                   
                 </tr>
             </thead>
             <tbody>
@@ -68,10 +68,10 @@ $lista = $banner->ListarBanner();
                             <a href="index.php?p=banner&b=atualizar&id=<?php echo $linha['idBanner']; ?>">
                                 <p class="alterar">Alterar Foto do Banner</p>
                             </a>
-                        </td>
-                        <!-- Coluna da página de destino clicável -->
-                        <td>
-                            <a href="<?php echo $linha['paginaDestino']; ?>"><?php echo $linha['paginaDestino']; ?></a>
+
+                           <a href="<?php echo $linha['paginaDestino']; ?>"><?php echo $linha['paginaDestino']; ?></a>
+                       
+                          
                         </td>
                     </tr>
                 <?php endforeach ?>

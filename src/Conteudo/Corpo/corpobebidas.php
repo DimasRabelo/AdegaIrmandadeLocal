@@ -2,12 +2,12 @@
     <h2>PRODUTOS</h2>
 </div>
 <ul class="sample-menu">
-    <li data-tab="product1">Cervejas</li>
-    <li data-tab="product2">Refrigerantes</li>
-    <li data-tab="product3">Destilados</li>
+    <li data-tab="cervejas">Cervejas</li>
+    <li data-tab="refrigerantes">Refrigerantes</li>
+    <li data-tab="destilados">Destilados</li>
 </ul>
 
-<div class="sample-content active" id="product1">
+<div class="sample-content active" id="cervejas">
     <div class="site">
         <section class="brejas wow animate__animated animate__fadeInUp">
 
@@ -86,7 +86,7 @@
 </div>
 
 
-<div class="sample-content" id="product2">
+<div class="sample-content" id="refrigerantes">
     <div class="site">
         <div class="Refrigerantes">
 
@@ -216,7 +216,7 @@
 
 </div>
 
-<div class="sample-content" id="product3">
+<div class="sample-content" id="destilados">
     <div class="site">
 
 

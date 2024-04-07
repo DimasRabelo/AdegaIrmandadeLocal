@@ -99,3 +99,6 @@ class BannerClass
         echo "<script>document.location='index.php?p=banner'</script>";
     }
 }
+
+
+
