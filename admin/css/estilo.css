@@ -497,12 +497,12 @@ button {
 
 .iconeAjuda {
     width: 100%;
-
+    padding: 20px;
 }
 
 .msnSuporte {
     font-family: 'Secular One';
-    
+    font-size: 0.8em;
 }
 .geralAjuda{
     display: flex;
