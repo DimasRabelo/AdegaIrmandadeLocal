@@ -96,13 +96,13 @@ header {
 .brejas {
   display: flex;
   width: 100%;
-  margin-top: 30px;
+  margin-top: 20px;
   color: #ffffff;
   font-family: "Secular One";
 }
 
 .Cervejas {
-  width: 100%;
+  width: 50%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -110,41 +110,32 @@ header {
 }
 
 .Cervejas img {
-  width: 80%;
+  width: 60%;
   box-shadow: 20px 40px 20px rgba(0, 0, 0, 0.5);
   border-radius: 10px 10px;
 }
 
-.bannerBreja{
+.bannerBreja img{ 
   width: 100%;
   }
-  .bannerBreja img{
-      max-width: 500px;
-      max-height: 700px;
-      object-fit: cover;
-     
-  }
+  
 
-  .bannerTabacaria{
+  .bannerTabacaria img{
     width: 100%;
   }
   
-  .bannerTabacaria{
-    max-width: 1920px;
-    max-height: 600px;
-    object-fit: cover;
-  }
+  
 
-  .bannerDestilado{
+  .bannerDestilado img{
     width: 100%;
   }
 
-  .bannerDestilado img{
+  /*.bannerDestilado img{
     max-width: 1920px;
     max-height: 400px;
     object-fit: cover;
 }
-
+*/
 
 
 
