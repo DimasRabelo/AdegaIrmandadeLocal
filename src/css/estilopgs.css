@@ -425,6 +425,18 @@ section {
   text-align: center;
 }
 
+/*Carrossel de videos usando bootstrap */
+
+.carousel-control-next{
+  width: 6%;
+  right: -68px;
+}
+
+.carousel-control-prev{
+  width: 6%;
+  left: -68px;
+}
+
 /* #### Contato #### */
 
 .contato {
