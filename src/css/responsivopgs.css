@@ -103,10 +103,41 @@
         flex-direction: column;
     }
 
-    .Refrigerantes img {
-        width: 100%;
-
+    .Refrigerantes {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Divide em três colunas com largura igual */
+        gap: 20px; /* Espaçamento entre os itens */
     }
+    
+    .Refrigerantes section {
+       
+        flex-direction: column;
+    }
+    
+    .Refrigerantes section div {
+        margin-bottom: 20px; /* Espaçamento entre os itens dentro de uma coluna */
+    }
+    
+    .Cervejas {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    
+    .Cervejas > div {
+        flex: 1 0 50%; /* Para fazer duas colunas */
+        padding: 10px; /* Ajuste conforme necessário */
+        box-sizing: border-box; /* Para incluir o padding na largura total */
+    }
+    
+    .Cervejas > div img {
+        max-width: 100%;
+        height: auto;
+    }
+
+
+
+
 
     /* Ajustes de largura para botões e outros elementos */
     .btnresponsivobebida {
@@ -127,9 +158,7 @@
     }
 
     /* Ajustes específicos para diferentes páginas */
-    .brejas {
-        flex-direction: column;
-    }
+   
 
     .videos img {
         width: 50% !important;
@@ -164,8 +193,8 @@
     }
 
     .bannerBreja,
-    .bannerDestilado,
-    .bannerTabacaria {
+    .bannerDestilado
+     {
         display: none;
     }
 
@@ -208,5 +237,14 @@
     }
     .contato form input[type="submit"]{
         width: 76%!important;
-    }
+ 
+   }
+
+  
+
+
+
+
+
+
 }
