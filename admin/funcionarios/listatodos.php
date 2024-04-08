@@ -43,7 +43,7 @@ $funcionario = new FuncionarioClass($id);
         /* Removendo a borda ao focar */
     }
 
-    
+
     .formVisualizacao div {
         display: flex;
         flex-direction: row;
@@ -64,11 +64,12 @@ $funcionario = new FuncionarioClass($id);
     .Icones img {
         width: 300px;
     }
+
     .listaRedesSociais {
         display: flex;
         flex-direction: row;
-        justify-content: center; 
-        align-items: center; 
+        justify-content: center;
+        align-items: center;
         width: 100%;
         padding: 0;
         list-style: none;
@@ -76,7 +77,7 @@ $funcionario = new FuncionarioClass($id);
 
     /* Estilos para os itens da lista */
     .listaRedesSociais li {
-        margin: 0 5px; 
+        margin: 0 5px;
     }
 </style>
 
@@ -141,8 +142,8 @@ $funcionario = new FuncionarioClass($id);
         <input type="text" name="statusFuncionario" id="statusFuncionario" value="<?php echo $funcionario->statusFuncionario; ?>" style="border: none;" readonly>
     </div>
     <ul class="listaRedesSociais">
-    <li><a href="<?php echo $funcionario->linkFaceFuncionario; ?>" target="_blank">FACEBOOK</a></li>
-    <li><a href="#" target="_blank">INSTAGRAM</a></li>
-    <li><a href="#" target="_blank">WHATSAPP</a></li>
-        </ul>
+        <li><a href="<?php echo $funcionario->linkFaceFuncionario; ?>" target="_blank">FACEBOOK</a></li>
+        <li><a href="#" target="_blank">INSTAGRAM</a></li>
+        <li><a href="#" target="_blank">WHATSAPP</a></li>
+    </ul>
 </form>

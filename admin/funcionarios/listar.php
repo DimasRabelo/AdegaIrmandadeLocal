@@ -43,15 +43,12 @@ $totalAtivos = count($listaAtivos);
 $totalDesativados = count($listaDesativados);
 ?>
 <style>
-.nomeFunc a {
- display: flex;
- font-size: 0.8em;
- margin: 14px;
-}
+    .nomeFunc a {
+        display: flex;
+        font-size: 0.8em;
+        margin: 14px;
+    }
 </style>
-
-
-
 
 <div>
     <a class="icon-link icon-link-hover" style="--bs-icon-link-transform: translate3d(0, -.125rem, 0);" href="index.php?p=funcionarios&f=cadastrar">
@@ -61,7 +58,6 @@ $totalDesativados = count($listaDesativados);
         Novo Funcionario
     </a>
 </div>
-
 
 <div>
     <form class="CampoPes" action="" method="POST">
@@ -80,9 +76,9 @@ $totalDesativados = count($listaDesativados);
     </div>
 <?php endif; ?>
 
-
-
 <!-- Formulário de filtro -->
+
+
 
 <form class="formStatus" action="" method="POST">
     <div>
@@ -91,7 +87,6 @@ $totalDesativados = count($listaDesativados);
             <option value="" <?php echo empty($statusFiltrar) ? 'selected' : 'LISTA GERAL'; ?>>LISTA GERAL</option>
             <option value="ATIVO" <?php echo ($statusFiltrar === 'ATIVO') ? 'selected' : ''; ?>>ATIVOS</option>
             <option value="DESATIVADO" <?php echo ($statusFiltrar === 'DESATIVADO') ? 'selected' : ''; ?>>DESATIVADOS</option>
-
         </select>
         <button type="submit">Filtrar</button>
     </div>
@@ -106,7 +101,7 @@ $totalDesativados = count($listaDesativados);
     </div>
 </form>
 
-<div class="table-container" id="arrastarMouse" id="geradorPdf">
+<div class="table-container" id="arrastarMouse">
     <div>
         <table>
             <caption>Lista de Funcionários</caption>
@@ -145,29 +140,21 @@ $totalDesativados = count($listaDesativados);
                             <?php endif; ?>
                             <?php if ($statusFiltrar === 'DESATIVADO') : ?>
                                 <td class="ativar">
-
-
-
-
                                     <a href="index.php?p=funcionarios&f=ativar&id=<?php echo $linha['idFuncionario']; ?>" onclick="return confirmarAtivacao()">
                                         <img src="./img/aceitar.png" alt="">
                                     </a>
                                 </td>
                             <?php endif; ?>
-                            <td class="nomeFunc"   ><?php echo $linha['nomeFuncionario'] ?>
-                            <a href="index.php?p=funcionarios&f=listatodos&id=<?php echo $linha['idFuncionario'] ?>">
-                                        Exibir Todos os Campos
-                                    </a>
-                                      
-                             </td>
-
-
+                            <td class="nomeFunc"><?php echo $linha['nomeFuncionario'] ?>
+                                <a href="index.php?p=funcionarios&f=listatodos&id=<?php echo $linha['idFuncionario'] ?>">
+                                    Exibir Todos os Campos
+                                </a>
+                            </td>
                             <td class="fotoGeral">
                                 <a href="../admin/img/<?php echo $linha['fotoFuncionario'] ?>" data-lightbox="<?php echo $linha['nomeFuncionario'] ?>" data-title="<?php echo $linha['nomeFuncionario'] ?>">
                                     <img src="../admin/img/<?php echo $linha['fotoFuncionario'] ?>" data-alt="<?php echo $linha['nomeFuncionario'] ?>">
-                                </a>   
+                                </a>
                             </td>
-
                             <?php if ($statusFiltrar !== 'DESATIVADO') : ?>
                                 <td class="btngrudsicone">
                                     <a href="index.php?p=funcionarios&f=atualizar&id=<?php echo $linha['idFuncionario'] ?>">
@@ -178,7 +165,6 @@ $totalDesativados = count($listaDesativados);
                                     </a>
                                 </td>
                             <?php endif; ?>
-
                             <td><?php echo $linha['cargoFuncionario'] ?></td>
                             <td><?php echo $linha['nivelFuncionario'] ?></td>
                             <td><?php echo $linha['enderecoFuncionario'] ?></td>
@@ -186,9 +172,7 @@ $totalDesativados = count($listaDesativados);
                         </tr>
                     <?php endif; ?>
                 <?php endforeach; ?>
-                
             </tbody>
         </table>
-        <button id="generate-pdf"> Gerar PDF</button>
     </div>
 </div>

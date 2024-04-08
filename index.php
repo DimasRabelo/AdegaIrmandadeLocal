@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -22,8 +20,7 @@
     <link rel="stylesheet" href="./src/css/estilos.css" />
     <link rel="stylesheet" href="./src/css/responsivo.css">
 
-
-
+  
 </head>
 
 
@@ -33,7 +30,7 @@
 
     <?php require_once("src/Conteudo/Menus/menuindex.php") ?>
 
-    
+
 
 
     <!-- Corpo -->

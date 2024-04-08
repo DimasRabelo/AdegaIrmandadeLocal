@@ -54,5 +54,3 @@ function confirmarAtivacao() {
     return confirmacao;
 }
 
-
-
