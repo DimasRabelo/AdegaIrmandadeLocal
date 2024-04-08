@@ -78,13 +78,13 @@ if (!empty($lista)) {
     </div>
     <p class="informa">clique em cima da foto se deseja alterar</p>
     <?php if ($primeiroBanner) : ?>
-        <p class="textDimensoes">Alterar a foto com dimensões de 500 de Largura e 700 de Altura</p>
+        <p class="textDimensoes">Para Melhor Qualidade de Imagem insira no tamanho 500 de Largura e 700 de Altura</p>
     <?php endif; ?>
     <?php if ($segundoBanner) : ?>
-        <p class="textDimensoes">Alterar a foto com dimensões de 1920 de Largura e 600 de Altura</p>
+        <p class="textDimensoes">Para Melhor Qualidade de Imagem insira no tamanho 1920 de Largura e 400 de Altura</p>
     <?php endif; ?>
     <?php if ($terceiroBanner) : ?>
-        <p class="textDimensoes">Alterar a foto com dimensões de 1920 de Largura e 400 de Altura</p>
+        <p class="textDimensoes">Para Melhor Qualidade de Imagem insira no tamanho 1920 de Largura e 300 de Altura</p>
     <?php endif; ?>
     <div>
         <label for="nomeBanner">Nome do Banner</label>

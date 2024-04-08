@@ -3,14 +3,14 @@
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
-    require_once("class/vendas.php");
-    $venda = new VendasClass($id);
+    require_once("class/videos.php");
+    $video = new VideosClass($id);
 
 
-    $venda->ativar();
+    $video->ativar();
 
     // Redireciona de volta para a lista após a ativação
-    echo "<script>document.location='index.php?p=vendas'</script>";
+    echo "<script>document.location='index.php?p=videos'</script>";
     exit;
     
 }
