@@ -105,6 +105,12 @@ require_once('authenticacao.php');
 
                     break;
 
+                    case 'videos';
+
+                    require_once('videos/videos.php');
+
+                    break;
+
 
                 case 'banner':
 
@@ -126,25 +132,19 @@ require_once('authenticacao.php');
             ?>
             <div class="divlogin">
                 <?php
-                $foto = isset($usuarios->fotoUsuario) ? $usuarios->fotoUsuario : (isset($funcionarios->fotoFuncionario) ? $funcionarios->fotoFuncionario : null);
-                $nome = isset($usuarios->nomeUsuario) ? $usuarios->nomeUsuario : (isset($funcionarios->nomeFuncionario) ? $funcionarios->nomeFuncionario : null);
+                $foto = !empty($funcionarios->fotoFuncionario) ? $funcionarios->fotoFuncionario : 'btnuser.png';
+                $nome = !empty($funcionarios->nomeFuncionario) ? $funcionarios->nomeFuncionario : 'Nome do Funcionário';
 
-                if (!empty($foto)) {
-                    // Se houver uma foto, exiba-a
-                    echo '<img src="../admin/img/' . $foto . '" alt="User">';
-                } else {
-                    // Se não houver foto, exiba a imagem padrão
-                    echo '<img src="../admin/img/btnuser.png" alt="Imagem Padrão">';
-                }
+                // Exibindo a imagem de perfil
+                echo '<img src="../admin/img/' . $foto . '" alt="User">';
 
                 // Exibindo o nome do usuário ou funcionário
-                echo '<h2>' . $nome . '</h2>';
+                echo '<h2>' . htmlspecialchars($nome) . '</h2>';
                 ?>
 
                 <!-- Link para desconectar -->
                 <a href="desconectar.php">Desconectar</a>
             </div>
-
 
             <nav>
                 <ul>

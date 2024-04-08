@@ -121,8 +121,8 @@ $totalDesativados = count($listaDesativados);
                     <th>Valor Unitário</th>
                     <th>Data</th>
                     <th>Hora</th>
-                    <th>Quantidade Venda</th>
-                    <th>Valor Total em Reais</th>
+                    <th>Quantidade</th>
+                    <th>Valor Total</th>
                     <?php if ($statusFiltrar !== 'DESATIVADO') : ?>
                         <th>Alterar ou Desativar</th>
                         
