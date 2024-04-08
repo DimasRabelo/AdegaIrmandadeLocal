@@ -22,9 +22,11 @@ class VideosClass
         return $lista;
     }
 
+    
+
     public function desativar()
     {
-        $query = "UPDATE tblurlvideos SET statusVideos ='DESATIVADO' WHERE idVideos = " . $this->idVideo;
+        $query = "UPDATE tblurlvideos SET statusVideos ='DESATIVADO' WHERE idVideo = " . $this->idVideo;
 
         $conn = Conexao::LigarConexao();
         $conn->exec($query);

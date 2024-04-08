@@ -46,7 +46,7 @@ $totalDesativados = count($listaDesativados);
 .nomeFunc a {
  display: flex;
  font-size: 0.8em;
-   
+ margin: 14px;
 }
 </style>
 
@@ -106,7 +106,7 @@ $totalDesativados = count($listaDesativados);
     </div>
 </form>
 
-<div class="table-container" id="arrastarMouse">
+<div class="table-container" id="arrastarMouse" id="geradorPdf">
     <div>
         <table>
             <caption>Lista de Funcionários</caption>
@@ -186,7 +186,9 @@ $totalDesativados = count($listaDesativados);
                         </tr>
                     <?php endif; ?>
                 <?php endforeach; ?>
+                
             </tbody>
         </table>
+        <button id="generate-pdf"> Gerar PDF</button>
     </div>
 </div>

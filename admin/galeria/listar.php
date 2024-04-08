@@ -21,8 +21,17 @@ $listaDesativados = $galeria->listarDesativados();
         max-height: 220px;
         object-fit: cover;
     }
+    .linkPagina{
+        margin-bottom:50px;
+    }
     
 </style>
+
+
+<div class="linkPagina">
+<a href="http://localhost/AdegaIrmandadeLocal/galeria.php">Link da Página galeria</a>
+</div>
+
 
 <div>
     <a class="icon-link icon-link-hover" href="index.php?p=galeria&g=cadastrar">

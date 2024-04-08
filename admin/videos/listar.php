@@ -9,6 +9,19 @@ $lista = $video->listarUrlVideos();
 
 ?>
 
+<style>
+.urlDesativar{
+    margin-top: 21px;
+   
+
+}</style>
+
+<div class="linkPagina">
+    <a href="http://localhost/AdegaIrmandadeLocal/galeria.php">Link da Página galeria</a>
+</div>
+
+
+
 
 <tbody>
     <div>
@@ -18,10 +31,11 @@ $lista = $video->listarUrlVideos();
             <thead>
                 <tr>
 
-                    <th>Url dos Carrossel de Videos da Página Galeria</th>
+                    <th>Url do Carrossel de Videos da Página Galeria</th>
+                   
                     <th>Video</th>
                     <th>Data da Publicação</th>
-                    <th>Status</th>
+                 
 
 
                 </tr>
@@ -34,15 +48,18 @@ $lista = $video->listarUrlVideos();
                         <td>
                             <a href="<?php echo $linha['urlVideo']; ?>" target="_blank"><?php echo $linha['urlVideo']; ?></a>
                             <a href="index.php?p=videos&u=atualizar&id=<?php echo $linha['idVideo']; ?>">
-                                <p class="alterar">Alterar Url do Video</p>
+                                <p class="alterar">Alterar Url do Video</p> 
                             </a>
+
                         </td>
+                        
                         <td><?php echo $linha['idVideo'] ?></td>
                         <td><?php echo date('d/m/Y', strtotime($linha['dataPublicacao'])) ?></td>
-                        <td><?php echo $linha['statusVideos'] ?></td>
+                       
 
                     </tr>
                 <?php endforeach ?>
+                
             </tbody>
         </table>
     </div>

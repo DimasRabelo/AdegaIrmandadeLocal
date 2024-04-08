@@ -6,6 +6,11 @@
     $lista      = $galeria->listarGaleria();
     //var_dump($lista);
 
+    require_once('admin/class/videos.php');
+    $video = new VideosClass();
+    $listaUrl = $video->listarUrlVideos();
+  //var_dump($listaUrl);
+
 ?>
 
 
