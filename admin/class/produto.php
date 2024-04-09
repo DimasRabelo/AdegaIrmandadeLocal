@@ -19,6 +19,25 @@ class ProdutoClass
 
 
 
+    public function geradorPDF()
+    {
+        $sql = "SELECT * FROM tblprodutos";
+        $conn = Conexao::LigarConexao();
+        $resultado = $conn->query($sql);
+    
+        // Verifica se a consulta retornou resultados
+        if ($resultado && $resultado->rowCount() > 0) {
+            // Retorna os dados dos funcionários
+            return $resultado->fetchAll();
+        } else {
+            // Retorna false ou uma mensagem de erro, dependendo da sua necessidade
+            return false;
+        }
+    }
+
+
+
+
 
     public function listarProdutosAtivos()
     {
