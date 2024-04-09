@@ -145,14 +145,14 @@ require_once('authenticacao.php');
 
             <nav>
                 <ul>
-                    <li><a href="index.php?p=dashboard" class="<?= ($pagina == 'dashboard' || $pagina == '') ? 'menuAtivo' : ''; ?>"> Dashboard </a></li>
-                    <li><a href="index.php?p=funcionarios" class="<?= ($pagina == 'funcionarios') ? 'menuAtivo' : ''; ?>"> Funcionários </a></li>
-                    <li><a href="index.php?p=produtos" class="<?= ($pagina == 'produtos') ? 'menuAtivo' : ''; ?>"> Produtos </a></li>
-                    <li><a href="index.php?p=estoque" class="<?= ($pagina == 'estoque') ? 'menuAtivo' : ''; ?>"> Estoque </a></li>
-                    <li><a href="index.php?p=vendas" class="<?= ($pagina == 'vendas') ? 'menuAtivo' : ''; ?>"> Vendas </a></li>
-                    <li><a href="index.php?p=clientes" class="<?= ($pagina == 'clientes') ? 'menuAtivo' : ''; ?>"> Clientes </a></li>
-                    <li><a href="index.php?p=contato" class="<?= ($pagina == 'contato') ? 'menuAtivo' : ''; ?>"> E-mail </a></li>
-
+                    <li><a href="index.php?p=dashboard" class="<?php echo($pagina == 'dashboard' || $pagina == '') ? 'menuAtivo' : ''; ?>"> Dashboard </a></li>
+                    <li><a href="index.php?p=funcionarios" class="<?php echo($pagina == 'funcionarios') ? 'menuAtivo' : ''; ?>"> Funcionários </a></li>
+                    <li><a href="index.php?p=produtos" class="<?php echo ($pagina == 'produtos') ? 'menuAtivo' : ''; ?>"> Produtos </a></li>
+                    <li><a href="index.php?p=estoque" class="<?php echo ($pagina == 'estoque') ? 'menuAtivo' : ''; ?>"> Estoque </a></li>
+                    <li><a href="index.php?p=vendas" class="<?php echo ($pagina == 'vendas') ? 'menuAtivo' : ''; ?>"> Vendas </a></li>
+                    <li><a href="index.php?p=clientes" class="<?php echo ($pagina == 'clientes') ? 'menuAtivo' : ''; ?>"> Clientes </a></li>
+                    <li><a href="index.php?p=contato" class="<?php echo ($pagina == 'contato') ? 'menuAtivo' : ''; ?>"> E-mail </a></li>
+                    
                     <li class="geralAjuda"><img class="iconeAjuda" src="../admin/img/ajudaSuporte.png" alt=""></a>
                         <p class="msnSuporte">Olá! Dúvidas e Suporte
                             Você pode nos contatar
