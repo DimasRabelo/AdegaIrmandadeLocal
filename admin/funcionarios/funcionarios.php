@@ -11,6 +11,7 @@ if ($pagina == NULL) {
     if($pagina == 'desativar' ) { require_once('desativar.php');}
     if($pagina == 'ativar' ) { require_once('ativar.php');}
     if($pagina == 'listatodos' ) { require_once('listatodos.php');}
+    if($pagina == 'gerarPdf' ) { require_once('gerarPdf.php');}
 }
 
 
