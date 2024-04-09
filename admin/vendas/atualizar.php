@@ -79,7 +79,7 @@ if (isset($_POST['statusVenda'])) {
             // Obtém o ID do funcionário atualmente cadastrado na venda
             $idFuncionarioVenda = $venda->idFuncionario;
 
-            foreach ($funcionario as $funcionario) {
+            foreach ($funcionario as $funcionarioClass) {
                 // Verifica se o ID do funcionário sendo iterado no loop é igual ao ID do funcionário associado à venda
                 $selected = ($funcionario['idFuncionario'] == $idFuncionarioVenda) ? 'selected' : '';
 
