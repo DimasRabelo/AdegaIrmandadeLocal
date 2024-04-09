@@ -23,9 +23,6 @@ require_once('authenticacao.php');
 </head>
 
 <body>
-
-h
-
     <main>
         <section class="topoEsquerda">
             <h1>
