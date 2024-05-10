@@ -1,7 +1,4 @@
-
-/* Evento do Mouse */
-
-
+// Evento de Arrastar Mouse
 let isDragging = false;
 let startX, startY, scrollLeft, scrollTop;
 
@@ -36,21 +33,13 @@ arrastarMouseElement.addEventListener('mousemove', (e) => {
     arrastarMouseElement.scrollTop = scrollTop - walkY;
 });
 
-/* onclique do Botão Desativar */
-
+// Funções de Confirmação
 function confirmarDesativacao() {
-    // Exibir uma caixa de diálogo de confirmação
-    var confirmacao = confirm("Tem certeza de que deseja desativar este item?");
-
-    // Retorna true se o usuário clicou em "OK", caso contrário, retorna false
-    return confirmacao;
+    // Exibir uma caixa de diálogo de confirmação e retornar o resultado
+    return confirm("Tem certeza de que deseja desativar este item?");
 }
 
 function confirmarAtivacao() {
-    // Exibir uma caixa de diálogo de confirmação
-    var confirmacao = confirm("Tem certeza de que deseja ativar esse cadastro?");
-
-    // Retorna true se o usuário clicou em "OK", caso contrário, retorna false
-    return confirmacao;
+    // Exibir uma caixa de diálogo de confirmação e retornar o resultado
+    return confirm("Tem certeza de que deseja ativar esse cadastro?");
 }
-

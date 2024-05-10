@@ -25,7 +25,15 @@ if (isset($_POST['urlVideo'])) {
     $video->Atualizar();
 }
 
+
+
 ?>
+
+<style>
+    .inputUrl{
+        text-transform: none;
+    }
+</style>
 
 <h1 class="h1Atual">Atualizar Url Video</h1>
 <form  action="index.php?p=videos&u=atualizar&id=<?php echo $video->idVideo ?>" method="POST" enctype="multipart/form-data">

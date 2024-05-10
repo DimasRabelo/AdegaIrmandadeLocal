@@ -13,8 +13,14 @@ $lista = $video->listarUrlVideos();
 .urlDesativar{
     margin-top: 21px;
    
+}
+.listaUrl{
+    text-transform: none;
+}
 
-}</style>
+
+
+</style>
 
 <div class="linkPagina">
     <a href="http://localhost/AdegaIrmandadeLocal/galeria.php">Link da Página galeria</a>
@@ -45,8 +51,8 @@ $lista = $video->listarUrlVideos();
                     <tr>
 
 
-                        <td>
-                            <a href="<?php echo $linha['urlVideo']; ?>" target="_blank"><?php echo $linha['urlVideo']; ?></a>
+                        <td >
+                            <a class="listaUrl"   href="<?php echo $linha['urlVideo']; ?>" target="_blank"><?php echo $linha['urlVideo']; ?></a>
                             <a href="index.php?p=videos&u=atualizar&id=<?php echo $linha['idVideo']; ?>">
                                 <p class="alterar">Alterar Url do Video</p> 
                             </a>
