@@ -7,21 +7,15 @@ $venda = new VendasClass($id);
 
 //echo $venda->idVenda;
 
-
-
-
-
 if (isset($_POST['statusVenda'])) {
 
-
-
     $statusVenda = $_POST['statusVenda'];
-    $valorTotalVenda = $_POST['valorTotalVenda'];
+    $quantidadeVenda = $_POST['quantidadeVenda']; // Corrigir para quantidadeVenda
     $idFuncionario = $_POST['idFuncionario'];
     $idProduto = $_POST['idProduto'];
 
     $venda->statusVenda = $statusVenda;
-    $venda->quantidadeVenda = $quantidadeVenda;
+    $venda->quantidadeVenda = $quantidadeVenda; // Corrigir para quantidadeVenda
     $venda->idFuncionario = $idFuncionario;
     $venda->idProduto = $idProduto;
 
@@ -56,33 +50,27 @@ if (isset($_POST['statusVenda'])) {
         </select>
     </div>
 
-
     <div>
-        <label for="quantidadeVenda"> Quanitdade Vendida:</label>
+        <label for="quantidadeVenda">Quantidade Vendida:</label>
         <input type="text" name="quantidadeVenda" id="quantidadeVenda" placeholder="digite o valor" value="<?php echo $venda->quantidadeVenda; ?>">
     </div>
 
     <div>
         <select class="seleVendas" aria-label="Default select example" name="idFuncionario" id="idFuncionario" required>
             <option selected disabled>Selecione o Funcionário</option>
-
             <?php
             // Require da classe FuncionarioClass
             require_once('class/funcionario.php');
-
             // Instância da classe FuncionarioClass
             $funcionarioClass = new FuncionarioClass();
-
             // Obtém os funcionários ativos usando o método listarAtivos()
-            $funcionario = $funcionarioClass->listarAtivos();
-
+            $funcionariosAtivos = $funcionarioClass->listarAtivos();
             // Obtém o ID do funcionário atualmente cadastrado na venda
             $idFuncionarioVenda = $venda->idFuncionario;
 
-            foreach ($funcionario as $funcionarioClass) {
+            foreach ($funcionariosAtivos as $funcionario) {
                 // Verifica se o ID do funcionário sendo iterado no loop é igual ao ID do funcionário associado à venda
                 $selected = ($funcionario['idFuncionario'] == $idFuncionarioVenda) ? 'selected' : '';
-
                 // Exibe a opção do select, marcando-a como selecionada se for o funcionário atual associado à venda
                 echo "<option value='{$funcionario['idFuncionario']}' $selected>{$funcionario['nomeFuncionario']}</option>";
             }
@@ -90,29 +78,22 @@ if (isset($_POST['statusVenda'])) {
         </select>
     </div>
 
-
-
     <div>
         <select class="seleVendas" aria-label="Default select example" name="idProduto" id="idProduto" required>
             <option selected disabled>Selecione o Produto</option>
-
             <?php
             // Require da classe ProdutoClass
             require_once('class/produto.php');
-
             // Instância da classe ProdutoClass
             $produtoClass = new ProdutoClass();
-
             // Obtém os produtos ativos usando o método listarProdutosAtivos()
             $produtosAtivos = $produtoClass->listarProdutosAtivos();
-
             // Obtém o ID do produto atualmente cadastrado na venda
             $idProdutoVenda = $venda->idProduto;
 
             foreach ($produtosAtivos as $produto) {
                 // Verifica se o ID do produto sendo iterado no loop é igual ao ID do produto associado à venda
                 $selected = ($produto['idProduto'] == $idProdutoVenda) ? 'selected' : '';
-
                 // Exibe a opção do select, marcando-a como selecionada se for o produto atual associado à venda
                 echo "<option value='{$produto['idProduto']}' $selected>{$produto['nomeProduto']}</option>";
             }
@@ -122,14 +103,12 @@ if (isset($_POST['statusVenda'])) {
             foreach ($produtosDesativados as $produto) {
                 // Verifica se o ID do produto desativado é igual ao ID do produto associado à venda
                 $selected = ($produto['idProduto'] == $idProdutoVenda) ? 'selected' : '';
-
                 // Exibe a opção do select, marcando-a como selecionada se for o produto atual associado à venda
                 echo "<option value='{$produto['idProduto']}' $selected>{$produto['nomeProduto']} (Desativado)</option>";
             }
             ?>
         </select>
     </div>
-
 
     <div>
         <button type="submit">Atualizar Venda</button>
