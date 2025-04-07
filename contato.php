@@ -29,7 +29,9 @@ if (isset($_POST['email'])) {
 
     $contato->Inserir();
 
-  
+    require_once('mailer/Exception.php');
+    require_once('mailer/PHPMailer.php');
+    require_once('mailer/SMTP.php');
 
     //Crie uma instância; passar `true (verdadeiro)`
     $mail = new PHPMailer(true);
